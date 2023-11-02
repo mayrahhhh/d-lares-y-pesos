@@ -43,3 +43,53 @@ def menu():
               print("el radio es",circulo(int("digite el radio")))
 
 menu()     
+--------------------------------------------------------otro ejemplo
+
+
+import math
+from termcolor import colored
+
+def convertir():
+    d = input(colored("1 pesos a dólares, 2 dólares a pesos: ", "blue"))
+    if not d.isdigit(): 
+        print(print(chr(27)+"[1;33m"+("Error: Debes ingresar un número.", "red")))
+        return
+
+    d = int(d)
+    t = float(input(colored("Digita la tasa de cambio: ", "blue")))
+
+    if d == 1:
+        plata = input(colored("Digita los pesos: ", "blue"))
+        if not plata.isdigit():
+            print(colored("Error: Debes ingresar un número.", "red"))
+            return
+        plata = int(plata)
+        print(colored(plata / t, "green"))
+    else:
+        plata = input(colored("Digita los dólares: ", "blue"))
+        if not plata.isdigit():
+            print(colored("Error: Debes ingresar un número.", "red"))
+            return
+        plata = int(plata)
+        print(colored(plata * t, "green"))
+
+def circulo(radio):
+    salida = 0
+    salida = math.pi * radio ** 2
+    return salida
+
+def menu():
+    opcion = 1
+    while opcion != 0:  
+        opcion = int(input(colored("0. Salir, 1. Convertir, 2. Calcular área del círculo: ", "blue")))
+        if opcion == 1:
+            convertir()
+        elif opcion == 2:
+            radio = input(colored("Digite el radio del círculo: ", "blue"))
+            if not radio.isdigit():
+                print(colored("Error: Debes ingresar un número.", "red"))
+                continue
+            radio = float(radio)
+            print(colored("El área del círculo es:", "green"), colored(circulo(radio), "green"))
+
+menu()
