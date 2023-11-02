@@ -20,11 +20,26 @@ def convertir():
          print(plata*t)
 convertir()
 
+import math
+
+def circulo(radio):
+    salida=0
+    salida=math.pi * radio ** 2
+    return salida
+
+radio = input("Ingrese el radio del círculo: ")
+radio=float(radio)
+print(math.pi,radio)
+
 def menu():
     opcion = 1
     while opcion != 0:
         opcion = int(input("0. Salir 1. Convertir: "))
         if opcion == 1:
             convertir()
+
+
+        if opcion ==2:
+              print("el radio es",circulo(int("digite el radio")))
 
 menu()     
