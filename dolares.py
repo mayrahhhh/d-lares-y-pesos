@@ -19,3 +19,12 @@ def convertir():
          plata=int(input("digita los dolares"))
          print(plata*t)
 convertir()
+
+def menu():
+    opcion = 1
+    while opcion != 0:
+        opcion = int(input("0. Salir 1. Convertir: "))
+        if opcion == 1:
+            convertir()
+
+menu()     
